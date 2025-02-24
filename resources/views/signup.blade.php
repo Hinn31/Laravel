@@ -39,15 +39,23 @@
             <label>Address</label>
             <input type="text" class="form-control" name="address">
         </div>
-
-        {{-- Nhúng file error.blade.php --}}
-        <div>
-            @include('block.error')
-        </div>
-
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-
+    @include('block.error')
+        <div class="display-infor">
+            @if(isset($userSession))
+                @foreach($userSession as $user)
+                    <p>Name: {{ $user['name'] }}</p>
+                    <p>Age: {{ $user['age'] }}</p>
+                    <p>Date: {{ $user['date'] }}</p>
+                    <p>Phone: {{ $user['phone'] }}</p>
+                    <p>Web: {{ $user['web'] }}</p>
+                    <p>Address: {{ $user['address'] }}</p>
+                    <hr>
+                @endforeach
+            @endif
+        </div>
+<!-- 
     <div class="display-infor">
         @if(isset($user))
         <p>Name: {{ $user['name'] }}</p>
@@ -57,7 +65,7 @@
         <p>Website: {{ $user['web'] }}</p>
         <p>Address: {{ $user['address'] }}</p>
         @endif
-    </div>
+    </div> -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.5.1/js/bootstrap.min.js"></script>
