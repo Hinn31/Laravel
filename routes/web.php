@@ -10,6 +10,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ShowController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\TaoController;
+use App\Http\Controllers\TableController;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Http\Request;
@@ -74,11 +75,10 @@ Route::get('/database', function () {
 
 Route::get('/controller', [TaoController::class , 'createProductsTable']);
 
-
-
-
 Route::get('homeshop', [ShopController::class, 'getIndex'])->name('trangchu');
 Route::get('sanphamshop', [ShopController::class, 'getLoaiSp'])->name('loaisanpham');
 Route::get('chitietshop', [ShopController::class, 'getChitiet'])->name('chitietsanpham');
 Route::get('lienheshop', [ShopController::class, 'getLienhe'])->name('lienhe');
 Route::get('gioithieushop', [ShopController::class, 'getAbout'])->name('about');
+
+Route::get('/table', [TableController::class,'createTables']);
