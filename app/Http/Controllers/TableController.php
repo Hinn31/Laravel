@@ -12,12 +12,12 @@ class TableController extends Controller
     {   
         // Tạo bảng addresses
         Schema::create('addresses', function (Blueprint $table) {
-            $table->increments('id'); // Khóa chính tự động tăng
+            $table->increments('id'); 
             $table->string('street', 255)->nullable(); // Cho phép NULL
             $table->string('country', 255);
-            $table->unsignedInteger('icon_id')->nullable(); // Không âm, có thể NULL
+            $table->unsignedInteger('icon_id')->nullable(); 
             $table->unsignedInteger('monster_id');
-            $table->timestamps(); // Thêm created_at, updated_at tự động
+            $table->timestamps(); 
         });
 
         // Tạo bảng articles
@@ -118,7 +118,6 @@ class TableController extends Controller
             $table->increments('id');
             $table->string('name', 255);
             $table->text('description');
-            // Lưu ý: Laravel Schema chưa hỗ trợ trực tiếp CHECK constraint, bạn có thể thêm sau bằng raw SQL nếu cần.
             $table->longText('extras');
             $table->timestamps();
         });

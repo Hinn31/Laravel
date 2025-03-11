@@ -11,6 +11,8 @@ use App\Http\Controllers\ShowController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\TaoController;
 use App\Http\Controllers\TableController;
+use App\Http\Controllers\TrangchuController;
+
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Http\Request;
@@ -81,4 +83,5 @@ Route::get('chitietshop', [ShopController::class, 'getChitiet'])->name('chitiets
 Route::get('lienheshop', [ShopController::class, 'getLienhe'])->name('lienhe');
 Route::get('gioithieushop', [ShopController::class, 'getAbout'])->name('about');
 
-Route::get('/table', [TableController::class,'createTables']);
+Route::get('/create-tables', [TableController::class, 'createTables']);
+Route::get('/trangchu', [TrangchuController::class, 'getIndex']);
