@@ -85,3 +85,9 @@ Route::get('gioithieushop', [ShopController::class, 'getAbout'])->name('about');
 
 Route::get('/create-tables', [TableController::class, 'createTables']);
 Route::get('/trangchu', [TrangchuController::class, 'getIndex']);
+Route::get('/type/{id}', [TrangchuController::class, 'getLoaiSp']);	
+
+// Cake Shop
+Route::get('/loai-san-pham/{type}', [PageController::class, 'getLoaiSP']);
+Route::get('/trangchu', [TrangchuController::class,'getIndex']);
+Route::get('/type/{id}', [PageController::class, 'getLoaiSp']);
