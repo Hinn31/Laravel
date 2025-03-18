@@ -1,4 +1,4 @@
-<?
+<?php
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -21,3 +21,4 @@ class BillDetail extends Model
         return $this->belongsTo(Product::class, 'id_product');
     }
 }
+

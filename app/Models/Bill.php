@@ -21,3 +21,4 @@ class Bill extends Model
         return $this->hasMany(BillDetail::class, 'id_bill');
     }
 }
+

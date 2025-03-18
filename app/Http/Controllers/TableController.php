@@ -100,7 +100,6 @@ class TableController extends Controller
             $table->timestamps();
         });
 
-        // customer (engine MyISAM)
         Schema::create('customer', function (Blueprint $table) {
             $table->engine = 'MyISAM';
             $table->increments('id');
